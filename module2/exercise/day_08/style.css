@@ -1,0 +1,88 @@
+/* Reset basic margin & padding for consistent looks across browsers */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style main body layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card container styling */
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Form layout */
+form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Input styling */
+input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Add button styling */
+button {
+  padding: 8px 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Item counter styling */
+#count {
+  margin: 15px 0 10px 0;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Remove default list styling */
+ul {
+  list-style: none;
+}
+
+/* Individual list item styling */
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+/* Special state: completed/bought item style */
+li.done {
+  text-decoration: line-through; /* Draws a line through the text */
+  color: #888;
+}
+
+/* Delete button styling */
+.del {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}

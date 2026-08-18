@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TeleBirr Loyalty Points Module</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f7f6; }
+    .card { background: white; padding: 20px; max-width: 450px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .balance { font-size: 1.5rem; font-weight: bold; color: #0284c7; margin: 10px 0; }
+    button { padding: 8px 12px; margin-top: 5px; cursor: pointer; }
+    input { padding: 8px; width: 100px; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>TeleBirr Loyalty Account</h2>
+    <div class="balance">Current Balance: <span id="points-display">0</span> Points</div>
+
+    <p>
+      <input type="number" id="etb-input" placeholder="Amount ETB" value="100">
+      <button id="earn-btn">Earn Points (Standard)</button>
+      <button id="holiday-btn">Earn (Holiday 2x)</button>
+    </p>
+
+    <p>
+      <input type="number" id="redeem-input" placeholder="Points" value="5">
+      <button id="redeem-btn">Redeem Points</button>
+    </p>
+
+    <p id="status-msg" style="color: #666;"></p>
+  </div>
+
+  <script>
+    // --- 1. CORE MODULE LOGIC ---
+    const standardEarnRule = (amountInETB) => Math.floor(amountInETB / 10);
+    const holidayEarnRule = (amountInETB) => Math.floor(amountInETB / 10) * 2;
+
+    function createLoyaltyAccount(initialPoints = 0) {
+      let points = initialPoints; // Private state via closure
+
+      return {
+        earn(amountInETB, earnRuleFn = standardEarnRule) {
+          if (amountInETB <= 0) return 0;
+          const earned = earnRuleFn(amountInETB);
+          points += earned;
+          return earned;
+        },
+        redeem(amountToRedeem) {
+          if (amountToRedeem <= 0 || amountToRedeem > points) return false;
+          points -= amountToRedeem;
+          return true;
+        },
+        balance() {
+          return points;
+        }
+      };
+    }
+
+    // --- 2. DOM INTERACTION LOGIC ---
+    const account = createLoyaltyAccount(); // Create private loyalty account instance
+
+    const pointsDisplay = document.querySelector('#points-display');
+    const etbInput = document.querySelector('#etb-input');
+    const redeemInput = document.querySelector('#redeem-input');
+    const statusMsg = document.querySelector('#status-msg');
+
+    const updateUI = () => {
+      pointsDisplay.textContent = account.balance();
+    };
+
+    document.querySelector('#earn-btn').addEventListener('click', () => {
+      const amount = Number(etbInput.value);
+      const earned = account.earn(amount, standardEarnRule);
+      statusMsg.textContent = `Earned ${earned} points from ${amount} ETB!`;
+      updateUI();
+    });
+
+    document.querySelector('#holiday-btn').addEventListener('click', () => {
+      const amount = Number(etbInput.value);
+      const earned = account.earn(amount, holidayEarnRule);
+      statusMsg.textContent = `Earned ${earned} bonus points (Holiday 2x)!`;
+      updateUI();
+    });
+
+    document.querySelector('#redeem-btn').addEventListener('click', () => {
+      const pts = Number(redeemInput.value);
+      const success = account.redeem(pts);
+      if (success) {
+        statusMsg.textContent = `Successfully redeemed ${pts} points!`;
+      } else {
+        statusMsg.textContent = `Redemption failed! Insufficient points.`;
+      }
+      updateUI();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadata specifying character set and screen behavior -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Addis Market List</title> <!-- Title shown in browser tab -->
+  
+  <!-- Link external CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h1>Addis Market List</h1> <!-- Page title -->
+
+    <!-- Form for adding new market items -->
+    <form id="add-form">
+      <!-- Input field for item name -->
+      <input type="text" id="name" placeholder="e.g. Teff, Berbere" />
+      <!-- Submit button -->
+      <button type="submit">Add Item</button>
+    </form>
+
+    <!-- Paragraph to show total items count -->
+    <p id="count">0 items</p>
+
+    <!-- Empty unordered list where JS will insert items -->
+    <ul id="list"></ul>
+  </div>
+
+  <!-- Connect the JS script file at the very end of body so elements load first -->
+  <script src="app.js"></script>
+</body>
+</html>
