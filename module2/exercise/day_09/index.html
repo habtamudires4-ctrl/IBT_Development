@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habesha Eatery - Quick Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Habesha Eatery</h1>
+      <p>Traditional Ethiopian Dish Builder</p>
+    </header>
+
+    <!-- Form Section -->
+    <section class="card">
+      <h2>Add Item to Order</h2>
+      <form id="order-form">
+        <div class="form-group">
+          <label for="dish-name">Select Dish:</label>
+          <select id="dish-name" required>
+            <option value="">-- Choose a Dish --</option>
+            <option value="Doro Wot">Doro Wot (Spicy Chicken)</option>
+            <option value="Kitfo">Kitfo (Minced Beef)</option>
+            <option value="Beyaynetu">Beyaynetu (Veggie Combo)</option>
+            <option value="Tibs">Beef Tibs</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" min="1" value="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="spice-level">Spice Level:</label>
+          <select id="spice-level">
+            <option value="Mild">Mild</option>
+            <option value="Medium Berbere" selected>Medium Berbere</option>
+            <option value="Extra Berbere">Extra Berbere</option>
+          </select>
+        </div>
+
+        <button type="submit" id="add-btn">Add to Order</button>
+      </form>
+    </section>
+
+    <!-- Interactive Order List Section -->
+    <section class="card">
+      <h2>Your Current Order</h2>
+      
+      <!-- Event Delegation Container -->
+      <ul id="order-list" class="order-list">
+        <!-- Dynamic items will render here -->
+      </ul>
+
+      <div class="summary">
+        <p>Total Items: <span id="total-count">0</span></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

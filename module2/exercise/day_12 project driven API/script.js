@@ -1,4 +1,3 @@
-Create the js file
 
 script.js
 
