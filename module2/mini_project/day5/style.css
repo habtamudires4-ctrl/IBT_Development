@@ -1,0 +1,176 @@
+:root {
+    --bg-dark: lab(1.25% 3.02 -8.22);
+    --card-bg: #46c883;
+    --inner-bg: #27272a;
+    --border-color: #3f3f46;
+    --brand-green: #10b981;
+    --text-main: #f4f4f5;
+    --text-muted: #a1a1aa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    padding: 2rem 1rem;
+    line-height: 1.5;
+}
+
+.drills-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.drill-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.drill-card h2 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+/* 1. Flexbox Navbar */
+.flex-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--inner-bg);
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+}
+
+.brand-logo {
+    font-weight: 800;
+    color: var(--brand-green);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.btn-primary {
+    background-color: var(--brand-green);
+    color: #000000;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* 2. Flex Row Cards */
+.equal-card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.flex-card {
+    flex: 1;
+    min-width: 140px;
+    background-color: var(--inner-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.25rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+/* 3. Auto-Fit Grid */
+.auto-grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-tile {
+    background-color: var(--inner-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* 4. Grid Template Areas Skeleton */
+.grid-skeleton {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    gap: 0.5rem;
+}
+
+.sk-header { grid-area: header; background: var(--inner-bg); padding: 0.75rem; border-radius: 4px; }
+.sk-sidebar { grid-area: sidebar; background: var(--inner-bg); padding: 0.75rem; border-radius: 4px; }
+.sk-main { grid-area: main; background: var(--inner-bg); padding: 0.75rem; min-height: 80px; border-radius: 4px; }
+.sk-footer { grid-area: footer; background: var(--inner-bg); padding: 0.75rem; border-radius: 4px; }
+
+@media (max-width: 700px) {
+    .grid-skeleton {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+}
+
+/* 5. Relative + Absolute Badge */
+.badge-card-container {
+    padding-top: 0.75rem;
+}
+
+.pinned-product-card {
+    position: relative;
+    width: 260px;
+    background-color: var(--inner-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.etb-sale-badge {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 56px;
+    height: 56px;
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}

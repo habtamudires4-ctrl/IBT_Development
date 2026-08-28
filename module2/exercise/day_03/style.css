@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Exercise 1: :root Custom Properties
+   ========================================================================== */
+:root {
+    --primary-color: #009a44;
+    --primary-hover: #00be54;
+    --btn-padding: 0.875rem 1.75rem;
+    --main-font: 'Inter', system-ui, -apple-system, sans-serif;
+    --bg-dark: #09090b;
+    --card-bg: #18181b;
+    --border-color: #3f3f46;
+    --text-main: #f4f4f5;
+    --text-muted: #a1a1aa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--main-font);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    padding: 2rem 1rem;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.exercise-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.exercise-card h2 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.custom-btn {
+    font-family: var(--main-font);
+    background-color: var(--primary-color);
+    padding: var(--btn-padding);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.custom-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* ==========================================================================
+   Exercise 2: Box Model Comparison
+   ========================================================================== */
+.card-demo {
+    width: 300px;
+    padding: 24px;
+    border: 2px solid #10b981;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background-color: #27272a;
+}
+
+.card-content-box {
+    box-sizing: content-box;
+}
+
+.card-border-box {
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Exercise 3: Specificity Rules
+   ========================================================================== */
+p {
+    color: var(--text-muted); /* Specificity: (0, 0, 1) */
+}
+
+.description-text {
+    color: #3b82f6; /* Specificity: (0, 1, 0) */
+}
+
+#hero-text {
+    color: #10b981; /* Specificity: (1, 0, 0) — WINS */
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Exercise 4: Table Styling
+   ========================================================================== */
+.flight-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+
+.flight-table caption {
+    text-align: left;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.flight-table thead tr {
+    background-color: #1e3a8a;
+    color: #ffffff;
+    text-align: left;
+}
+
+.flight-table th,
+.flight-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.flight-table tbody tr:nth-child(even) {
+    background-color: #27272a;
+}
+
+.flight-table tbody tr:hover {
+    background-color: #3f3f46;
+}
+
+/* ==========================================================================
+   Exercise 5: Color Conversions & HSL Hover
+   ========================================================================== */
+.palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.color-swatch {
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.color-swatch small {
+    font-weight: 400;
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+/* Ethiopian Green: #009a44 -> rgb(0, 154, 68) -> hsl(146, 100%, 30%) */
+.ethio-green {
+    background-color: hsl(146, 100%, 30%);
+    color: #ffffff;
+}
+.ethio-green:hover {
+    background-color: hsl(146, 100%, 45%);
+}
+
+/* Ethiopian Yellow: #fed100 -> rgb(254, 209, 0) -> hsl(49, 100%, 50%) */
+.ethio-yellow {
+    background-color: hsl(49, 100%, 50%);
+    color: #000000;
+}
+.ethio-yellow:hover {
+    background-color: hsl(49, 100%, 65%);
+}
+
+/* Ethiopian Red: #e62b1e -> rgb(230, 43, 30) -> hsl(4, 80%, 51%) */
+.ethio-red {
+    background-color: hsl(4, 80%, 51%);
+    color: #ffffff;
+}
+.ethio-red:hover {
+    background-color: hsl(4, 80%, 66%);
+}

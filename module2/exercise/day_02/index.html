@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Exercise 5: Complete, accessible <head> setup -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethio Telecom & Ethiopian Airlines Services | Day 12 Exercises</title>
+    <meta name="description"
+        content="Day 12 HTML accessibility exercises featuring Ethio Telecom registration, Ethiopian Airlines schedule, media blocks, and accessible code refactoring.">
+</head>
+
+<body>
+
+    <header>
+        <h1>Day 2 HTML & Accessibility Exercises</h1>
+    </header>
+
+    <main>
+        <!-- Exercise 1: Ethio Telecom Registration Form -->
+        <section aria-labelledby="telecom-heading">
+            <h2 id="telecom-heading">1. Ethio Telecom Service Registration</h2>
+
+            <!-- 
+                Submission Method Justification:
+                METHOD="POST": Chosen because registration submits sensitive personal data 
+                (name, phone number, email) to the server. POST keeps user input out of the 
+                URL bar/browser history and handles data mutation securely compared to GET.
+            -->
+            <form action="/register" method="post">
+                <div>
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="phone">Phone Number (Format: +251XXXXXXXXX):</label>
+                    <!-- Regex validates exactly +251 followed by 9 digits -->
+                    <input type="tel" id="phone" name="phone" pattern="^\+251\d{9}$" placeholder="+251911223344"
+                        required>
+                </div>
+
+                <div>
+                    <label for="branch">Select Branch:</label>
+                    <select id="branch" name="branch" required>
+                        <option value="">-- Choose a Branch --</option>
+                        <option value="bole">Bole</option>
+                        <option value="kazanchis">Kazanchis</option>
+                        <option value="piassa">Piassa</option>
+                    </select>
+                </div>
+
+                <div>
+                    <button type="submit">Register Service</button>
+                </div>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Exercise 2: Ethiopian Airlines Flight Table -->
+        <section aria-labelledby="flights-heading">
+            <h2 id="flights-heading">2. Ethiopian Airlines Flight Schedule</h2>
+            <table>
+                <caption>Ethiopian Airlines Flight Schedules and Fares (ETB)</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Flight</th>
+                        <th scope="col">From</th>
+                        <th scope="col">To</th>
+                        <th scope="col">Departs</th>
+                        <th scope="col">Price (ETB)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">ET 102</th>
+                        <td>Addis Ababa (ADD)</td>
+                        <td>Dire Dawa (DIR)</td>
+                        <td>07:30 AM</td>
+                        <td>4,500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ET 204</th>
+                        <td>Addis Ababa (ADD)</td>
+                        <td>Bahir Dar (BJR)</td>
+                        <td>09:15 AM</td>
+                        <td>5,200</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ET 306</th>
+                        <td>Addis Ababa (ADD)</td>
+                        <td>Gondar (GDQ)</td>
+                        <td>11:45 AM</td>
+                        <td>5,800</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ET 412</th>
+                        <td>Addis Ababa (ADD)</td>
+                        <td>Mekelle (MQX)</td>
+                        <td>02:00 PM</td>
+                        <td>6,100</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ET 500</th>
+                        <td>Addis Ababa (ADD)</td>
+                        <td>Hawassa (AWA)</td>
+                        <td>04:30 PM</td>
+                        <td>3,900</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- Exercise 3: Accessible Media Block -->
+        <section aria-labelledby="media-heading">
+            <h2 id="media-heading">3. Landmark & Map Media Block</h2>
+            
+        </section>
+
+        <hr>
+
+        <!-- Exercise 4: Refactored Accessibility Snippets -->
+        <section aria-labelledby="refactor-heading">
+            <h2 id="refactor-heading">4. Accessible Code Refactoring</h2>
+
+            <!-- 
+                ACCESSIBILITY FIX NOTES:
+                1. Replaced <div class="button"> with <button type="button">:
+                   - Screen reader benefit: Identifies element as an actionable button control.
+                   - Keyboard benefit: Automatically focusable via Tab key and triggerable via Enter/Spacebar.
+                
+                2. Explicitly linked <label for="username"> to <input id="username">:
+                   - Screen reader benefit: Reads "User Name, edit text" when focused instead of unlabelled input.
+                   - Touch benefit: Tapping the label focuses the corresponding text input.
+
+                3. Added meaningful alt text to <img>:
+                   - Screen reader benefit: Reads out the visual context ("Plate of Doro Wat...") instead of skipping or reading raw image filename.
+            -->
+
+            <div>
+                <h3>Accessible Action Button</h3>
+                <button type="button" onclick="alert('Submitted!')">Submit Request</button>
+            </div>
+
+            <div>
+                <label for="username">User Name:</label>
+                <input type="text" id="username" name="username">
+            </div>
+
+            <div>
+            
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31687.412810006393!2d38.789983949046614!3d9.016936088296532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8585db11e715%3A0x8d1562d587d1e85a!2sBole%20International%20Airport!5e0!3m2!1sen!2sus!4v1755870653836!5m2!1sen!2sus"
+                    width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Bole International Airport">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ethio Telecom & Ethiopian Airlines Training Demo.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethio Telecom Customer Portal Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app">
+        <!-- Sticky Header (Flexbox inside) -->
+        <header class="app-header">
+            <div class="logo-group">
+                <span class="brand-icon">🟢</span>
+                <h1>Ethio Telecom Portal</h1>
+            </div>
+            <nav class="user-nav">
+                <span>Account: +251911223344</span>
+                <button type="button" class="btn-logout">Logout</button>
+            </nav>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="app-sidebar">
+            <ul class="sidebar-menu">
+                <li class="active">Overview</li>
+                <li>TeleBirr Services</li>
+                <li>Voice &amp; Data Packages</li>
+                <li>Bill History</li>
+                <li>Settings</li>
+            </ul>
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <main class="app-main">
+            <!-- Toolbar (Flexbox) -->
+            <div class="toolbar">
+                <h2>Account Overview</h2>
+                <div class="toolbar-actions">
+                    <button type="button" class="btn-primary">+ Recharge</button>
+                </div>
+            </div>
+
+            <!-- Auto-Fit Stat Cards (Grid) -->
+            <section class="card-grid">
+                <!-- Stat Card 1 with Badge -->
+                <div class="stat-card">
+                    <span class="status-badge">Active</span>
+                    <span class="card-label">Voice Balance</span>
+                    <p class="card-value">245 Mins</p>
+                </div>
+
+                <!-- Stat Card 2 with Badge -->
+                <div class="stat-card">
+                    <span class="status-badge discount">Promo</span>
+                    <span class="card-label">Data Balance</span>
+                    <p class="card-value">14.2 GB</p>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="stat-card">
+                    <span class="card-label">TeleBirr Balance</span>
+                    <p class="card-value">1,250.00 ETB</p>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="stat-card">
+                    <span class="card-label">SMS Balance</span>
+                    <p class="card-value">180 SMS</p>
+                </div>
+            </section>
+
+            <!-- Detailed Content Section -->
+            <section class="recent-activity">
+                <h3>Recent Transactions</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <span>Data Package Purchase (10GB)</span>
+                        <strong>-200 ETB</strong>
+                    </div>
+                    <div class="activity-item">
+                        <span>TeleBirr Transfer Received</span>
+                        <strong>+500 ETB</strong>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 Ethio Telecom Rebuild Demo. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

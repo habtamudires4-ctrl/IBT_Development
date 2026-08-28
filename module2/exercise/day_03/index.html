@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13 — CSS Fundamentals Exercises</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>Day 13 CSS Exercises</h1>
+
+        <!-- Exercise 1: CSS Variables & Button -->
+        <section class="exercise-card">
+            <h2>1. Custom Properties & Button</h2>
+            <button class="custom-btn" type="button">Action Button</button>
+        </section>
+
+        <!-- Exercise 2: Box Model Comparison -->
+        <section class="exercise-card">
+            <h2>2. Box Model (content-box vs border-box)</h2>
+            <div class="card-demo card-content-box">
+                <strong>Content-Box Card</strong>
+                <p>300px + 48px padding + 4px border = <strong>352px Total Rendered Width</strong></p>
+            </div>
+            <div class="card-demo card-border-box">
+                <strong>Border-Box Card</strong>
+                <p>300px width with box-sizing: border-box = <strong>300px Fixed Width</strong></p>
+            </div>
+        </section>
+
+        <!-- Exercise 3: Specificity Rule -->
+        <section class="exercise-card">
+            <h2>3. Specificity Score Breakdown</h2>
+            <p id="hero-text" class="description-text">
+                Targeted by element (<code>p</code>), class (<code>.description-text</code>), and ID (<code>#hero-text</code>). The ID rule wins.
+            </p>
+        </section>
+
+        <!-- Exercise 4: Ethiopian Airlines Table -->
+        <section class="exercise-card">
+            <h2>4. Ethiopian Airlines Flight Schedule</h2>
+            <table class="flight-table">
+                <caption>Domestic Flight Departures</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Flight</th>
+                        <th scope="col">From</th>
+                        <th scope="col">To</th>
+                        <th scope="col">Departs</th>
+                        <th scope="col">Price (ETB)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">ET 102</th>
+                        <td>Addis Ababa</td>
+                        <td>Dire Dawa</td>
+                        <td>07:30 AM</td>
+                        <td>4,500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ET 204</th>
+                        <td>Addis Ababa</td>
+                        <td>Bahir Dar</td>
+                        <td>09:15 AM</td>
+                        <td>5,200</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ET 306</th>
+                        <td>Addis Ababa</td>
+                        <td>Gondar</td>
+                        <td>11:45 AM</td>
+                        <td>5,800</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ET 412</th>
+                        <td>Addis Ababa</td>
+                        <td>Mekelle</td>
+                        <td>02:00 PM</td>
+                        <td>6,100</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ET 500</th>
+                        <td>Addis Ababa</td>
+                        <td>Hawassa</td>
+                        <td>04:30 PM</td>
+                        <td>3,900</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Exercise 5: Color Palette Swatches -->
+        <section class="exercise-card">
+            <h2>5. Color Conversions & Lightness Hover</h2>
+            <div class="palette-grid">
+                <div class="color-swatch ethio-green">
+                    <span>Ethiopian Green</span>
+                    <small>Hover to lighten</small>
+                </div>
+                <div class="color-swatch ethio-yellow">
+                    <span>Ethiopian Yellow</span>
+                    <small>Hover to lighten</small>
+                </div>
+                <div class="color-swatch ethio-red">
+                    <span>Ethiopian Red</span>
+                    <small>Hover to lighten</small>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

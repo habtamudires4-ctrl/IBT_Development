@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations & Menu — Habesha Eatery, Bole</title>
+    <meta name="description" content="Reserve a table and view our authentic Ethiopian menu at Habesha Eatery in Bole, Addis Ababa.">
+</head>
+<body>
+
+    <header>
+        <h1>Habesha Eatery</h1>
+        <p>Authentic Ethiopian Cuisine in Bole</p>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="index.html" aria-current="page">Reservations &amp; Menu</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section aria-labelledby="reservation-heading">
+            <h2 id="reservation-heading">Table Reservation</h2>
+            <form action="/reserve" method="post">
+                <div>
+                    <label for="res-name">Full Name:</label>
+                    <input type="text" id="res-name" name="name" required>
+                </div>
+
+                <div>
+                    <label for="res-email">Email Address:</label>
+                    <input type="email" id="res-email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="res-guests">Number of Guests:</label>
+                    <input type="number" id="res-guests" name="guests" min="1" max="20" value="2" required>
+                </div>
+
+                <div>
+                    <label for="res-date">Reservation Date:</label>
+                    <input type="date" id="res-date" name="date" required>
+                </div>
+
+                <div>
+                    <button type="submit">Confirm Reservation</button>
+                </div>
+            </form>
+        </section>
+
+        <section aria-labelledby="menu-heading">
+            <h2 id="menu-heading">Our Special Menu</h2>
+            <table>
+                <caption>Habesha Eatery Special Dishes and Prices (ETB)</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Dish</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price (ETB)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Special Beyaynetu</th>
+                        <td>Assorted vegan stews served on fresh Injera</td>
+                        <td>350.00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Doro Wat</th>
+                        <td>Slow-cooked spicy chicken stew with boiled egg</td>
+                        <td>450.00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Beef Tibs</th>
+                        <td>Sautéed beef strip loin with rosemary and green chili</td>
+                        <td>500.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading">Restaurant Gallery</h2>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=300&q=80" alt="Fresh traditional Ethiopian coffee serving at Habesha Eatery table.">
+                <figcaption>Freshly prepared Ethiopian coffee served to table after dining.</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Habesha Eatery. Bole, Addis Ababa, Ethiopia.</p>
+    </footer>
+
+</body>
+</html>

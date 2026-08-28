@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Habesha Eatery, Bole</title>
+    <meta name="description" content="Get in touch with Habesha Eatery in Bole, Addis Ababa. Find opening hours and send messages.">
+</head>
+<body>
+
+    <header>
+        <h1>Contact Habesha Eatery</h1>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="index.html">Reservations &amp; Menu</a></li>
+            <li><a href="contact.html" aria-current="page">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Send Us a Message</h2>
+            <form action="/contact" method="post">
+                <div>
+                    <label for="name">Name:</label>
+                    <input id="name" name="name" type="text" required>
+                </div>
+
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input id="email" name="email" type="email" required>
+                </div>
+
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <div>
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </section>
+
+        <section aria-labelledby="hours-heading">
+            <h2 id="hours-heading">Opening Hours</h2>
+            <table>
+                <caption>Habesha Eatery Weekly Operating Hours</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Day</th>
+                        <th scope="col">Operating Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Monday - Friday</th>
+                        <td>08:00 AM - 10:00 PM</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Saturday</th>
+                        <td>09:00 AM - 11:00 PM</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Sunday</th>
+                        <td>10:00 AM - 09:00 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Bole, Addis Ababa, Ethiopia</p>
+    </footer>
+
+</body>
+</html>
