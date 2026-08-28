@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Signup Form</h2>
+  <p id="counter">Total Signups: 0</p>
+
+  <form id="signupForm" novalidate>
+    <div class="field-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="John Doe" autocomplete="off" />
+    </div>
+    
+    <div class="field-group">
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" placeholder="0912345678" />
+    </div>
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <div id="messageArea"></div>
+
+  <hr>
+
+  <h3>Registered Signups</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="signupsTableBody">
+      <!-- Dynamic rows rendered via JavaScript -->
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 12 - Currency Converter & Watchlist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Currency Converter</h1>
+
+    <!-- 1. Status Container (Loading / Error messages) -->
+    <div id="statusArea" class="status-area"></div>
+
+    <!-- 2. Conversion Form -->
+    <form id="convertForm" class="convert-form">
+      <div class="form-group">
+        <label for="amountInput">Amount (ETB):</label>
+        <input type="number" id="amountInput" placeholder="Enter amount..." step="any">
+      </div>
+
+      <div class="form-group">
+        <label for="currencySelect">Target Currency:</label>
+        <select id="currencySelect">
+          <!-- Populated dynamically -->
+        </select>
+      </div>
+
+      <button type="submit" id="convertBtn">Convert</button>
+    </form>
+
+    <!-- 3. Result Container -->
+    <div id="resultArea" class="result-area"></div>
+
+    <hr>
+
+    <!-- 4. Watchlist Section -->
+    <section class="watchlist-section">
+      <div class="watchlist-header">
+        <h2>Watchlist</h2>
+        <button type="button" id="addToWatchlistBtn">Add Selected to Watchlist</button>
+      </div>
+      
+      <!-- Empty Watchlist Container -->
+      <ul id="watchlistContainer" class="watchlist-list"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

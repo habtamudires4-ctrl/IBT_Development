@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 11 Mini Project - Signup Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="app-header">
+      <h1>Signup Form</h1>
+      <p id="counter" class="signup-counter">Total Signups: 0</p>
+    </header>
+
+    <form id="signupForm" class="signup-form" novalidate>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          placeholder="e.g. Abebe Bikila" 
+          autocomplete="off" 
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Ethiopian Phone Number</label>
+        <input 
+          type="tel" 
+          id="phone" 
+          name="phone" 
+          placeholder="e.g. 0911234567 or +251911234567" 
+          autocomplete="off" 
+        />
+      </div>
+
+      <button type="submit" id="submitBtn" class="btn">Register</button>
+    </form>
+
+    <div id="messageArea" class="message-area" role="alert" aria-live="polite"></div>
+
+    <section class="records-section">
+      <h2>Registered Entries</h2>
+      <ul id="entriesList" class="entries-list"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
